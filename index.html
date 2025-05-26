@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Biocare Medical | Tarjeta Digital</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --primary: #00C2B5;
+      --primary-dark: #009688;
+      --secondary: #FF7D6B;
+      --dark: #195D58;
+      --light: #F7FCFB;
+      --text: #2D3748;
+    }
+    
+    body {
+      font-family: 'Poppins', 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #f0f4f8, #e0ecea);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .card {
+      width: 100%;
+      max-width: 420px;
+      margin: 20px;
+      background: white;
+      border-radius: 24px;
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+      overflow: hidden;
+      color: var(--text);
+      position: relative;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+    }
+
+    .card-header {
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      padding: 30px 20px 20px;
+      text-align: center;
+      color: white;
+      position: relative;
+    }
+
+    .logo-container {
+      width: 100px;
+      height: 100px;
+      margin: 0 auto 15px;
+      background: white;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .logo {
+      width: 80px;
+      height: 80px;
+      object-fit: contain;
+      border-radius: 50%;
+    }
+
+    .title {
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin-bottom: 5px;
+      letter-spacing: 0.5px;
+    }
+
+    .subtitle {
+      font-size: 1rem;
+      font-weight: 400;
+      opacity: 0.9;
+      margin-bottom: 0;
+    }
+
+    .card-body {
+      padding: 25px;
+    }
+
+    .text {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin-bottom: 20px;
+      text-align: center;
+      color: var(--text);
+    }
+
+    .divider {
+      height: 1px;
+      background: linear-gradient(to right, transparent, #e0e0e0, transparent);
+      margin: 20px 0;
+    }
+
+    .section-title {
+      font-weight: 600;
+      font-size: 1.1rem;
+      color: var(--primary-dark);
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    
+    .section-title i {
+      font-size: 1.2rem;
+    }
+
+    .info-item {
+      display: flex;
+      margin-bottom: 15px;
+      align-items: flex-start;
+    }
+    
+    .info-icon {
+      color: var(--primary);
+      margin-right: 12px;
+      font-size: 1.1rem;
+      margin-top: 2px;
+    }
+    
+    .info-content {
+      flex: 1;
+    }
+    
+    .info-label {
+      font-weight: 500;
+      font-size: 0.85rem;
+      color: var(--primary-dark);
+      margin-bottom: 3px;
+    }
+    
+    .info-value {
+      font-size: 0.9rem;
+      color: var(--text);
+      line-height: 1.4;
+    }
+
+    .social-container {
+      display: flex;
+      justify-content: center;
+      margin: 25px 0 15px;
+    }
+    
+    .social-button {
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 1.3rem;
+      box-shadow: 0 4px 12px rgba(188, 24, 136, 0.3);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    
+    .social-button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 16px rgba(188, 24, 136, 0.4);
+    }
+
+    .cta-button {
+      background: linear-gradient(to right, var(--primary), var(--primary-dark));
+      color: white;
+      padding: 14px 28px;
+      border: none;
+      border-radius: 50px;
+      text-decoration: none;
+      display: block;
+      text-align: center;
+      margin: 25px auto 10px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: all 0.3s;
+      box-shadow: 0 4px 15px rgba(0, 194, 181, 0.3);
+      width: 90%;
+      max-width: 280px;
+    }
+    
+    .cta-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(0, 194, 181, 0.4);
+      background: linear-gradient(to right, var(--primary-dark), var(--primary));
+    }
+    
+    .watermark {
+      position: absolute;
+      bottom: 10px;
+      right: 15px;
+      font-size: 0.7rem;
+      color: #aaa;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <div class="card-header">
+      <div class="logo-container">
+        <img class="logo" src="logo.png" alt="Biocare Medical Logo" />
+      </div>
+      <h1 class="title">Biocare Medical</h1>
+      <p class="subtitle">Servicios Integrales en Salud</p>
+    </div>
+
+    <div class="card-body">
+      <p class="text">
+        Especialistas en diagnósticos de alta calidad con tecnología avanzada y atención humanizada. 
+        Tu salud es nuestra prioridad.
+      </p>
+
+      <div class="divider"></div>
+
+      <div class="section-title">
+        <i class="fas fa-map-marker-alt"></i>
+        <span>Información de Contacto</span>
+      </div>
+      
+      <div class="info-item">
+        <div class="info-icon"><i class="fas fa-map-pin"></i></div>
+        <div class="info-content">
+          <div class="info-label">DIRECCIÓN</div>
+          <div class="info-value">Calle 25 #18-10, Manga, Cartagena – Bolívar</div>
+        </div>
+      </div>
+      
+      <div class="info-item">
+        <div class="info-icon"><i class="fas fa-clock"></i></div>
+        <div class="info-content">
+          <div class="info-label">HORARIO</div>
+          <div class="info-value">10:00 AM – 10:00 PM (Lunes a Domingo)</div>
+        </div>
+      </div>
+      
+      <div class="info-item">
+        <div class="info-icon"><i class="fas fa-phone-alt"></i></div>
+        <div class="info-content">
+          <div class="info-label">TELÉFONOS</div>
+          <div class="info-value">304 212 7880<br>301 601 6912</div>
+        </div>
+      </div>
+      
+      <div class="info-item">
+        <div class="info-icon"><i class="fas fa-envelope"></i></div>
+        <div class="info-content">
+          <div class="info-label">EMAIL</div>
+          <div class="info-value">info@biocaremedical.com.co</div>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="section-title">
+        <i class="fas fa-heart"></i>
+        <span>Síguenos</span>
+      </div>
+      
+      <div class="social-container">
+        <a href="https://www.instagram.com/biocare.medical.sas/" target="_blank" class="social-button" title="Instagram">
+          <i class="fab fa-instagram"></i>
+        </a>
+      </div>
+
+      <a class="cta-button" href="https://wa.me/573042127880" target="_blank">
+        <i class="fab fa-whatsapp"></i> Agenda tu cita por WhatsApp
+      </a>
+      
+      <div class="watermark">Biocare Medical © 2023</div>
+    </div>
+  </div>
+</body>
+</html>
