@@ -28,7 +28,7 @@
 
     .card {
       width: 100%;
-      max-width: 420px;
+      max-width: 520px;
       margin: 20px;
       background: white;
       border-radius: 24px;
@@ -203,6 +203,64 @@
       font-size: 0.7rem;
       color: #aaa;
     }
+
+    .justify-text {
+      text-align: justify;
+    }
+
+    .banner-container {
+        position: relative;
+        width: 100%;
+        height: 50px;
+    }
+
+    .black-banner {
+        width: 100%;
+        height: 50px;
+        background-color: #f8f8f8;
+        background-image: url('background-origen.png');
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+    }
+
+    .banner-image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 50px;
+        object-fit: cover;
+        z-index: 1;
+    }
+
+    .center-image {
+        width: 450px;
+        height: auto;
+    }
+
+    .banner-link {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 2;
+        transition: transform 0.3s ease;
+    }
+
+    .banner-link:hover {
+        transform: translate(-50%, -50%) scale(1.05);
+    }
+
+    @media (max-width: 568px) {
+      .center-image {
+          width: 350px;
+          height: auto;
+      }
+    }
   </style>
 </head>
 <body>
@@ -217,7 +275,7 @@
     </div>
 
     <div class="card-body">
-      <p class="text">
+      <p class="text justify-text">
         Especialistas en diagnósticos de alta calidad con tecnología avanzada y atención humanizada. 
         Tu salud es nuestra prioridad.
       </p>
@@ -279,6 +337,14 @@
       </a>
       
       <div class="watermark">Biocare Medical © 2023</div>
+    </div>
+
+    <div class="banner-container">
+        <div class="black-banner">
+            <a href="https://jesr2104.github.io/DigitalBusinessCard-Origen/" class="banner-link" target="_blank">
+                <img src="origen-link.png" alt="Logo centrado" class="center-image">
+            </a>
+        </div>
     </div>
   </div>
 </body>
